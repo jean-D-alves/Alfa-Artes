@@ -23,7 +23,7 @@ export default function Contato() {
         </button>
       </section>
       <footer className="flex flex-col bg-black justify-between p-24 gap-4">
-        <div className="flex flex-row justify-between border-b-2">
+        <div className="flex flex-col justify-between border-b-2 lg:flex-row">
           <div>
             <h1 className="text-2xl">
               Alfa&amp;<span className="text-yellow-gold">Artes</span>
@@ -34,7 +34,7 @@ export default function Contato() {
             <p>
               Acari-RN
               <br />
-              (84) 9 99615-3022
+              (84) 9 99615-3922
               <br />
               gildaalves098@gmail.com
             </p>
