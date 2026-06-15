@@ -13,7 +13,7 @@ export default function MapView() {
         <p>
           Acari-RN
           <br />
-          Rua Dr. Horácio Mamede Galvão
+          Rua Dr. Jorácio Mamede Galvão
           <br />
           505
         </p>
