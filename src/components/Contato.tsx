@@ -23,7 +23,7 @@ export default function Contato() {
         </button>
       </section>
       <footer className="flex flex-col bg-black justify-between p-24 gap-4">
-        <div className="flex flex-col justify-between border-b-2 lg:flex-row">
+        <div className="flex flex-col justify-between border-b-2 lg:flex-row gap-4">
           <div>
             <h1 className="text-2xl">
               Alfa&amp;<span className="text-yellow-gold">Artes</span>
@@ -39,7 +39,7 @@ export default function Contato() {
               gildaalves098@gmail.com
             </p>
           </div>
-          <div className="flex flex-row gap-16">
+          <div className="flex flex-col gap-16 lg:flex-row gap-8">
             <div className="flex flex-col">
               <h1>SERVIÇOS</h1>
               <a href="#serviços">Sob medida</a>
@@ -53,7 +53,7 @@ export default function Contato() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col justify-between lg:flex-row">
           <p>&copy; 2026 Alfa &amp; Artes -- todos os direitos reservados</p>
           <div className="flex flex-row gap-4">
             <a

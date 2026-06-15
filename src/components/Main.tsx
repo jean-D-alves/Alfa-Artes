@@ -25,7 +25,7 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="relative flex items-center justify-center bg-[#1a0a05] overflow-hidden w-screen -mr-8 lg:mr-0 lg:flex-1 h-96 sm:h-[32rem] lg:h-[500px] rounded-xl">
+      <div className="relative flex items-center justify-center bg-[#1a0a05] overflow-hidden w-full lg:flex-1 h-96 sm:h-[32rem] lg:h-[500px] rounded-xl">
         <div
           className="absolute inset-0 opacity-20"
           style={{
