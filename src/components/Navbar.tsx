@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import ThemeToggle from "./ThemeTogge";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -32,25 +33,29 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:block">
-          <a className="bg-red p-4" href="https://wa.me/5584996153922">
-            Fale no WhatsApp
-          </a>
+        <ThemeToggle />
+        <a className="bg-red p-4" href="https://wa.me/5584996153922">
+          Fale no WhatsApp
+        </a>
       </div>
 
-      <button
-        className="md:hidden flex flex-col gap-1.5 z-50"
-        onClick={() => setOpen(!open)}
-      >
-        <span
-          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`}
-        />
-        <span
-          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${open ? "opacity-0" : ""}`}
-        />
-        <span
-          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`}
-        />
-      </button>
+      <div className="flex flex-row md:hidden">
+        <ThemeToggle />
+        <button
+          className="md:hidden flex flex-col gap-1.5 z-50"
+          onClick={() => setOpen(!open)}
+        >
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`}
+          />
+        </button>
+      </div>
 
       <div
         className={`absolute top-0 left-0 w-full bg-background flex flex-col items-center gap-8 py-24 transition-all duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
@@ -77,9 +82,7 @@ export default function Navbar() {
           Contato
         </a>
         <div className="bg-red px-6 py-4">
-          <a href="https://wa.me/5584996153922">
-            Fale no WhatsApp
-          </a>
+          <a href="https://wa.me/5584996153922">Fale no WhatsApp</a>
         </div>
       </div>
     </nav>

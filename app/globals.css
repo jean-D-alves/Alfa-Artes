@@ -12,15 +12,22 @@
   --font-display: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a0a05;
-    --foreground: #ededed;
-    --back-black: #0f0603;
-    --blue: #2563a8;
-    --yellow-gold: #e8b020;
-    --red: #c9371a;
-  }
+:root {
+  --background: #f5f0eb;
+  --foreground: #1a0a05;
+  --back-black: #e0d8d0;
+  --blue: #2563a8;
+  --yellow-gold: #e8b020;
+  --red: #c9371a;
+}
+
+.dark {
+  --background: #1a0a05;
+  --foreground: #ededed;
+  --back-black: #0f0603;
+  --blue: #2563a8;
+  --yellow-gold: #e8b020;
+  --red: #c9371a;
 }
 
 body {

@@ -22,10 +22,10 @@ export default function Contato() {
           </a>
         </button>
       </section>
-      <footer className="flex flex-col bg-black justify-between p-24 gap-4">
+      <footer className="flex flex-col bg-black text-blue-50 justify-between p-24 gap-4">
         <div className="flex flex-col justify-between border-b-2 lg:flex-row gap-4">
           <div>
-            <h1 className="text-2xl">
+            <h1 className="text-2xl font-display">
               Alfa&amp;<span className="text-yellow-gold">Artes</span>
             </h1>
             <p>
