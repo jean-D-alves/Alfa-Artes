@@ -42,7 +42,6 @@ export default function Navbar() {
             <h1 className="font-display text-2xl">
               Alfa&amp;<span className=" text-red">Artes</span>
             </h1>
-            <ThemeToggle />
             <MenuBurguer data={NavList} />
           </>
         ) : (
@@ -93,7 +92,10 @@ function MenuBurguer({ data }: { data: Navlist[] }) {
           ))}
         </div>
       ) : (
-        <IoMenu size={30} onClick={() => setMenu(!Menu)} />
+        <div className="flex flex-row">
+          <ThemeToggle />
+          <IoMenu size={30} onClick={() => setMenu(!Menu)} />
+        </div>
       )}
     </>
   );
