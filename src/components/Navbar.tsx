@@ -23,7 +23,7 @@ const NavList: Navlist[] = [
   },
   {
     name: "Contact",
-    url: "#contact",
+    url: "#contato",
   },
 ];
 
@@ -36,21 +36,29 @@ export default function Navbar() {
 
   return (
     <nav className="flex p-6 w-full justify-between items-center relative">
-      <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
-      <div className="flex gap-5 justify-center items-center ">
-        <ThemeToggle />
+      <div className="flex gap-5 w-full justify-between items-center ">
         {open ? (
-          <MenuBurguer data={NavList} />
+          <>
+            <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
+            <ThemeToggle />
+            <MenuBurguer data={NavList} />
+          </>
         ) : (
           <>
-            {NavList.map((i) => (
-              <Link key={i.name} href={i.url}>
-                {i.name}
-              </Link>
-            ))}
-            <button className="flex p-6 bg-red text-foreground">
-              Fale conosco
-            </button>
+            <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
+            <div className="flex gap-5">
+              {NavList.map((i) => (
+                <Link key={i.name} href={i.url}>
+                  {i.name}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-row">
+              <ThemeToggle />
+              <button className="flex p-6 bg-red text-foreground">
+                Fale conosco
+              </button>
+            </div>
           </>
         )}
       </div>
