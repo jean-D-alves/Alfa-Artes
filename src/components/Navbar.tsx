@@ -1,90 +1,88 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeTogge";
+import Link from "next/link";
+import { IoCloseOutline, IoMenu } from "react-icons/io5";
+type Navlist = {
+  name: string;
+  url: string;
+};
+const NavList: Navlist[] = [
+  {
+    name: "home",
+    url: "#home",
+  },
+  {
+    name: "services",
+    url: "#services",
+  },
+  {
+    name: "portfolio",
+    url: "#portfolio",
+  },
+  {
+    name: "Contact",
+    url: "#contact",
+  },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    setOpen(window.innerWidth < 700);
+  }, []);
+
   return (
     <nav className="flex p-6 w-full justify-between items-center relative">
-      <h1 className="text-2xl font-display">
-        Alfa&amp;<span className="text-red">Artes</span>
-      </h1>
-
-      <div className="hidden md:flex gap-8 items-center">
-        <a
-          href="#services"
-          className="text-foreground/70 hover:text-red transition-colors"
-        >
-          Serviços
-        </a>
-        <a
-          href="#portfolio"
-          className="text-foreground/70 hover:text-red transition-colors"
-        >
-          Portfolio
-        </a>
-        <a
-          href="#contato"
-          className="text-foreground/70 hover:text-red transition-colors"
-        >
-          Contato
-        </a>
-      </div>
-
-      <div className="hidden md:block">
+      <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
+      <div className="flex gap-5 justify-center items-center ">
         <ThemeToggle />
-        <a className="bg-red p-4" href="https://wa.me/5584996153922">
-          Fale no WhatsApp
-        </a>
-      </div>
-
-      <div className="flex flex-row md:hidden">
-        <ThemeToggle />
-        <button
-          className="md:hidden flex flex-col gap-1.5 z-50"
-          onClick={() => setOpen(!open)}
-        >
-          <span
-            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`}
-          />
-        </button>
-      </div>
-
-      <div
-        className={`absolute top-0 left-0 w-full bg-background flex flex-col items-center gap-8 py-24 transition-all duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-      >
-        <a
-          href="#services"
-          onClick={() => setOpen(false)}
-          className="text-lg text-foreground/70 hover:text-red transition-colors"
-        >
-          Serviços
-        </a>
-        <a
-          href="#portfolio"
-          onClick={() => setOpen(false)}
-          className="text-lg text-foreground/70 hover:text-red transition-colors"
-        >
-          Portfolio
-        </a>
-        <a
-          href="#contato"
-          onClick={() => setOpen(false)}
-          className="text-lg text-foreground/70 hover:text-red transition-colors"
-        >
-          Contato
-        </a>
-        <div className="bg-red px-6 py-4">
-          <a href="https://wa.me/5584996153922">Fale no WhatsApp</a>
-        </div>
+        {open ? (
+          <MenuBurguer data={NavList} />
+        ) : (
+          <>
+            {NavList.map((i) => (
+              <Link key={i.name} href={i.url}>
+                {i.name}
+              </Link>
+            ))}
+            <button className="flex p-6 bg-red text-foreground">
+              Fale conosco
+            </button>
+          </>
+        )}
       </div>
     </nav>
+  );
+}
+
+function MenuBurguer({ data }: { data: Navlist[] }) {
+  const [Menu, setMenu] = useState(false);
+  return (
+    <>
+      {Menu ? (
+        <div className="flex flex-col fixed top-0 left-0 justify-center items-center z-20 w-screen h-screen gap-5 bg-back-black">
+          <IoCloseOutline
+            size={30}
+            onClick={() => setMenu(!Menu)}
+            className="fixed top-4 right-4"
+          />
+          {data.map((i) => (
+            <Link
+              className="text-2xl"
+              key={i.name}
+              href={i.url}
+              onClick={() => setMenu(!Menu)}
+            >
+              {i.name}
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <IoMenu size={30} onClick={() => setMenu(!Menu)} />
+      )}
+    </>
   );
 }
