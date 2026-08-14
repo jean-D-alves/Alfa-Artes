@@ -39,13 +39,17 @@ export default function Navbar() {
       <div className="flex gap-5 w-full justify-between items-center ">
         {open ? (
           <>
-            <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
+            <h1 className="font-display text-2xl">
+              Alfa&amp;<span className=" text-red">Artes</span>
+            </h1>
             <ThemeToggle />
             <MenuBurguer data={NavList} />
           </>
         ) : (
           <>
-            <h1 className="font-display text-2xl text-red">Alfa&amp;Artes</h1>
+            <h1 className="font-display text-2xl">
+              Alfa&amp;<span className=" text-red">Artes</span>
+            </h1>
             <div className="flex gap-5">
               {NavList.map((i) => (
                 <Link key={i.name} href={i.url}>
