@@ -58,9 +58,9 @@ export default function Navbar() {
             </div>
             <div className="flex flex-row">
               <ThemeToggle />
-              <button className="flex p-6 bg-red text-foreground">
-                Fale conosco
-              </button>
+              <a className="bg-red p-4" href="https://wa.me/5584996153922">
+                Fale no WhatsApp
+              </a>
             </div>
           </>
         )}

@@ -1,4 +1,12 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+"use client";
+import { useEffect, useState } from "react";
+
 export default function Main() {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    setOpen(window.innerWidth < 700);
+  }, []);
   return (
     <section
       id="main"
@@ -17,9 +25,16 @@ export default function Main() {
           precisão e carinho em cada ponto.
         </p>
         <div className="flex gap-3">
-          <button className="bg-red text-white px-6 py-3 text-sm font-medium">
-            <a href="#services"> Ver serviços</a>
-          </button>
+          {open ? (
+            <a className="bg-red p-4" href="https://wa.me/5584996153922">
+              Fale no WhatsApp
+            </a>
+          ) : (
+            <a className="bg-red p-4" href="#services">
+              Ver serviços
+            </a>
+          )}
+
           <button className="border border-white/20 text-foreground/60 px-6 py-3 text-sm">
             <a href="#portfolio"> Ver portfólio</a>
           </button>
