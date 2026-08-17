@@ -41,7 +41,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="flex p-6 w-full justify-between items-center relative">
+    <nav className="flex p-6 w-full justify-between items-center absolute z-40">
       <div className="flex gap-5 w-full justify-between items-center ">
         {open ? (
           <>
@@ -57,7 +57,7 @@ export default function Navbar() {
             </h1>
             <div className="flex gap-5">
               {NavList.map((i) => (
-                <Link key={i.name} href={i.url}>
+                <Link className="hover:text-red" key={i.name} href={i.url}>
                   {i.name}
                 </Link>
               ))}

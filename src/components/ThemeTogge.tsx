@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   }, [dark])
 
   return (
-    <button className="px-4" onClick={() => setDark(!dark)}>
+    <button className="cursor-pointer px-4" onClick={() => setDark(!dark)}>
       {dark ? <MdLightMode /> : <MdDarkMode /> }
     </button>
   )
