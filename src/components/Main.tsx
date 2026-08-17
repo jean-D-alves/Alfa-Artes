@@ -41,12 +41,12 @@ export default function Main() {
                 Fale no WhatsApp
               </a>
             ) : (
-              <a className="text-clear-text bg-red p-4" href="#services">
+              <a className="text-clear-text bg-red p-4 hover:bg-red/80" href="#services">
                 Ver serviços
               </a>
             )}
 
-            <button className="border border-gray-500 bg-background text-foreground/60 px-6 py-3 text-sm">
+            <button className="border border-gray-500 bg-background text-foreground/60 px-6 py-3 text-sm hover:bg-gray-500 hover:text-background ">
               <a href="#portfolio"> Ver portfólio</a>
             </button>
           </div>

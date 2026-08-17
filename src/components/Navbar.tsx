@@ -64,7 +64,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-row">
               <ThemeToggle />
-              <a className="text-clear-text bg-red p-4" href="https://wa.me/5584996153922">
+              <a className="text-clear-text bg-red p-4 hover:bg-red/80" href="https://wa.me/5584996153922">
                 Falar no WhatsApp
               </a>
             </div>
