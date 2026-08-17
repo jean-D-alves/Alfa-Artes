@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeTogge";
@@ -10,19 +9,19 @@ type Navlist = {
 };
 const NavList: Navlist[] = [
   {
-    name: "home",
+    name: "Inicio",
     url: "#home",
   },
   {
-    name: "services",
+    name: "Serviços",
     url: "#services",
   },
   {
-    name: "portfolio",
+    name: "Portfolio",
     url: "#portfolio",
   },
   {
-    name: "Contact",
+    name: "Contato",
     url: "#contato",
   },
 ];
@@ -30,8 +29,15 @@ const NavList: Navlist[] = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const MOBILE_BREAKPOINT = 700;
+
   useEffect(() => {
-    setOpen(window.innerWidth < 700);
+    const checkWidth = () => setOpen(window.innerWidth < MOBILE_BREAKPOINT);
+
+    checkWidth();
+
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
   return (
@@ -58,8 +64,8 @@ export default function Navbar() {
             </div>
             <div className="flex flex-row">
               <ThemeToggle />
-              <a className="bg-red p-4" href="https://wa.me/5584996153922">
-                Fale no WhatsApp
+              <a className="text-clear-text bg-red p-4" href="https://wa.me/5584996153922">
+                Falar no WhatsApp
               </a>
             </div>
           </>
@@ -74,7 +80,7 @@ function MenuBurguer({ data }: { data: Navlist[] }) {
   return (
     <>
       {Menu ? (
-        <div className="flex flex-col fixed top-0 left-0 justify-center items-center z-20 w-screen h-screen gap-5 bg-back-black">
+        <div className="flex flex-col absolute top-0 left-0 justify-center items-center z-40 w-screen h-screen gap-5 bg-back-black">
           <IoCloseOutline
             size={30}
             onClick={() => setMenu(!Menu)}

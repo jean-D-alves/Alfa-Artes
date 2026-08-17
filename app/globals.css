@@ -6,8 +6,8 @@
   --color-blue: var(--blue);          
   --color-yellow-gold: var(--yellow-gold); 
   --color-red: var(--red);            
+  --color-clear-text: var(--clear-text);            
   --color-back-black: var(--back-black);
-
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
 }
@@ -19,6 +19,8 @@
   --blue: #2563a8;
   --yellow-gold: #e8b020;
   --red: #c9371a;
+  --clear-text:#ededed;
+  
 }
 
 .dark {
@@ -28,6 +30,7 @@
   --blue: #2563a8;
   --yellow-gold: #e8b020;
   --red: #c9371a;
+  --clear-text:#ededed;
 }
 
 body {
