@@ -35,12 +35,12 @@
 .CardSection {
   animation: CardSectionOpen linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 50%;
+  animation-range: entry 0% cover 40%;
 }
 
 @keyframes CardSectionOpen {
   from {
-    transform: scale(0);
+    transform: scale(0.6);
     opacity: 0.8;
   }
   to {
