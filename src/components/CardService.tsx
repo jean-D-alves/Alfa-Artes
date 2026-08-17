@@ -17,7 +17,7 @@ export default function CardServices({
 }: PropsCard) {
   return (
     <div
-      className="flex flex-col p-5 w-48 hover:border-t-4"
+      className="CardSection flex flex-col gap-5 p-5 justify-between w-2xs rounded-2xl border-2"
       style={{ borderColor: color }}
     >
       <div style={{ background: color,borderRadius:10, width: 40,height:40, justifyItems:"center", alignContent:"center" }}>{icon}</div>
@@ -27,7 +27,7 @@ export default function CardServices({
         className="flex text-center justify-center rounded-2xl"
         style={{ backgroundColor: color }}
       >
-        <small>{tag}</small>
+        <small className="text-clear-text">{tag}</small>
       </p>
     </div>
   );

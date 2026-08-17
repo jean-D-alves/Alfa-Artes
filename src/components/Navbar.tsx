@@ -10,7 +10,7 @@ type Navlist = {
 const NavList: Navlist[] = [
   {
     name: "Inicio",
-    url: "#home",
+    url: "#main",
   },
   {
     name: "Serviços",
